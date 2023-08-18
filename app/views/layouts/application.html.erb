@@ -12,11 +12,32 @@
 
   <body>
     <header>
-    <% if user_signed_in? %>
+    <% if user_signed_in? %><!--ログイン済みの場合、% if user_signed_in? %>から% else %>間のコードが表示されます。-->
+      <li>
+        <%= link_to "Bookers※", destroy_user_session_path, method: :delete %>
+      </li>
+       <li>
+        <%= link_to "Home※", destroy_user_session_path, method: :delete %>
+      </li>
+      <li>
+        <%= link_to "Users※", destroy_user_session_path, method: :delete %>
+      </li>
+      <li>
+        <%= link_to "Books※", destroy_user_session_path, method: :delete %>
+      </li>
       <li>
         <%= link_to "Log out", destroy_user_session_path, method: :delete %>
       </li>
-    <% else %>
+    <% else %><!--ログインしていない場合、% else %>から% end %>間のコードが表示されます。-->
+      <li>
+        <%= link_to "Bookers※", new_user_registration_path %>
+      </li>
+      <li>
+        <%= link_to "Home※", new_user_registration_path %>
+      </li>
+      <li>
+        <%= link_to " About※", new_user_registration_path %>
+      </li>
       <li>
         <%= link_to "Sign Up", new_user_registration_path %>
       </li>

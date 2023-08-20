@@ -1,0 +1,36 @@
+<h2>User info</h2>
+
+  <%= image_tag @user.get_profile_image(200,200) %>
+
+<table>
+  <tbody>
+    <tr></tr>
+    <tr>
+      <th>name</th>
+      <th>
+        <sapn><%= @user.name%></sapn>
+      </th>
+    </tr>
+    <tr>
+      <th>introduction</th>
+      <th>
+        <span><%= @user.introduction%></span>
+      </th>
+    </tr>
+  </body>
+
+</table>
+
+<%= link_to "歯車マークユーザーの編集ページ", edit_user_path(@user) %>
+
+<h2>New book</h2>
+
+<%= form_with model: book do |f| %>
+  <h4>Title</h4>
+  <%= f.text_field :title %>
+
+  <h4>Opinion</h4>
+  <%= f.text_area :body %>
+
+  <%= f.submit 'Create Book' %>
+<% end %>

@@ -17,17 +17,18 @@
 
   <tbody>
 
-    <% @books.each do |book| %>
+    <% @books.each do |book| %><!--eachメゾットについて復習しましょう-->
 
       <tr>
         <td>
           <%= image_tag book.user.get_profile_image(100,100) %>
         </td>
         <td>
-          <span><%= book.title %></span>
+          <span><%= link_to book.title, book_path(book.id) %></span>
         </td>
         <td>
           <span><%= book.body %></span>
+        </td>
         </td>
       </tr>
     <% end %>

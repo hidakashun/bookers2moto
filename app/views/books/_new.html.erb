@@ -1,10 +1,6 @@
-<div>
-  <%= flash[:notice] %>
-</div>
-
 <h2>User info</h2>
 
-  <%= image_tag @user.get_profile_image(200,200) %>
+<%= image_tag user.get_profile_image(100,100) %>
 
 <table class="table table-striped">
   <tbody>
@@ -12,24 +8,24 @@
     <tr>
       <th>name</th>
       <th>
-        <sapn><%= @user.name%></sapn>
+        <sapn><%= user.name%></sapn>
       </th>
     </tr>
     <tr>
       <th>introduction</th>
       <th>
-        <span><%= @user.introduction%></span>
+        <span><%= user.introduction%></span>
       </th>
     </tr>
-  </body>
+  </tbody>
 
 </table>
 
-<%= link_to "歯車マークユーザーの編集ページ", edit_user_path(@user) %>
+<%= link_to "歯車マークユーザーの編集ページ", edit_user_path(user) %>
 
 <h2>New book</h2>
 
-<%= form_with model: book do |f| %>
+<%= form_with model: Book.new do |f| %>
   <h4>Title</h4>
   <%= f.text_field :title %>
 

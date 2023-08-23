@@ -1,5 +1,3 @@
-<h1>books/indexいろんな人の投稿一覧</h1>
-
 <% if @book.errors.any? %>
   <%= @book.errors.count %>errors prohibited this obj from being saved:
   <ul>
@@ -11,8 +9,12 @@
 
 <%= render 'new', user: @user %>
 
+
+
+
+<div class="col-md-8 offset-md-1">
 <h2>Books</h2>
-<table class="table table-striped">
+<table class="table table-hover table-inverse">
   <thead>
     <tr>
       <th></th>
@@ -33,3 +35,9 @@
   </tbody>
 <% end %>
 </table>
+</div>
+</div>
+</div>
+
+
+

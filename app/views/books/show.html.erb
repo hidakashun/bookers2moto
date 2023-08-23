@@ -6,10 +6,13 @@
 
     <tr>
       <td>
-        <div class="row">
+        <div class="row"><!--画像と名前をBootstarpで一つのcolにまとめる-->
           <div class="col"><%= image_tag @user.get_profile_image(100,100) %></div>
-          <div class="w-100"></div><!--画像と名前をBootstarpで一つのcolにまとめる-->
-          <div class="col"><%= @user.name%></div>
+          <div class="w-100"></div>
+          <div class="col">
+            <span><%= link_to @user.name, user_path(@user.id)%></span>
+
+          </div>
         </div>
       </td>
       <td>

@@ -1,23 +1,38 @@
-<h1>自分投稿後の詳細ページ</h1>
 <%= render 'new', books: @books, book: @book, user: @user %>
+<div class="col-md-8 offset-md-1">
 <h2>Book detail</h2>
-<table class="table table-striped">
+<table class="table">
   <tbody>
 
     <tr>
-      <td><%= image_tag @user.get_profile_image(100,100) %><!--画像と名前をBootstarpで一つのcolにまとめる-->
-      <%= @user.name%></td>
+      <td>
+        <div class="row">
+          <div class="col"><%= image_tag @user.get_profile_image(100,100) %></div>
+          <div class="w-100"></div><!--画像と名前をBootstarpで一つのcolにまとめる-->
+          <div class="col"><%= @user.name%></div>
+        </div>
+      </td>
       <td>
         <span><%= link_to @book.title, book_path(@book.id) %></span>
       </td>
       <td>
         <span><%= @book.body %></span>
       </td>
-      <td><%= link_to "Edit", edit_book_path(@book.id) %></td>
+      <td>
+        <div class="actions">
+        <%= link_to "Edit", edit_book_path(@book.id), class:"btn btn-sm btn-success" %>
+        </div>
+      </td>
+      
+      
       <% if @book.user == current_user %>
-      <td><%= link_to "Destroy", book_path(@book.id), method: :delete, "data-confirm" => "本当に消しますか？" %></td>
+      <td><%= link_to "Destroy", book_path(@book.id), method: :delete, "data-confirm" => "本当に消しますか？", class:"btn btn-sm btn-danger" %></td>
       <% end %>
     </tr>
 
   </tbody>
 </table>
+</div>
+</div>
+</div>
+

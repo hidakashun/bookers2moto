@@ -27,26 +27,21 @@
 </div><!--済-->
 <h2 class="mt-3">New book</h2><!--済-->
 
-
-
-
-
 <%= form_with model: Book.new do |f| %>
-  <h4>Title</h4>
-  <%= f.text_field :title %>
+  <p>Title</p>
+  <%= f.text_field :title, class:"form-control" %>
 
-  <h4>Opinion</h4>
-  <%= f.text_area :body %>
-
-
-
+  <p>Opinion</p>
+  <%= f.text_area :body, class:"form-control" %>
 
 <div class="form-group"><!--済-->
 <%= f.submit "Create Book", class:"btn btn-success" %><!--済-->
 </div>  <!--済-->
 <% end %><!--済-->
-
-<!--</form>が入る？-->
-
 </div><!--済-->
+
+
+
+
+
 

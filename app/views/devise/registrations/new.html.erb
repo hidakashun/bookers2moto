@@ -1,67 +1,51 @@
-
-      <form id="new_user" class="new_user" action="/users" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="T2b6xi41KLkVAr3TeIlW2V6ADQDgZN7P2NGHDQBjNT4nmZqNZdXDzgImRVvKCHwaUuXBkkkR-VMZeAx48yAKwg" autocomplete="off">
-
-        <div class="field">
-          <label for="user_name">Name</label><br>
-          <input autofocus="autofocus" class="name" type="text" name="user[name]" id="user_name">
-        </div>
-        <div class="field">
-          <label for="user_email">Email</label><br>
-          <input autofocus="autofocus" class="email" type="email" value="" name="user[email]" id="user_email">
-        </div>
-        <div class="field">
-          <label for="user_password">Password</label>
-          <em>(6 characters minimum)</em>
-          <br>
-          <input autocomplete="off" class="password" type="password" name="user[password]" id="user_password">
-        </div>
-        <div class="field">
-          <label for="user_password_confirmation">Password confirmation</label><br>
-          <input autocomplete="off" class="password_confirm" type="password" name="user[password_confirmation]" id="user_password_confirmation">
-        </div>
-        <div class="actions">
-          <input type="submit" name="commit" value="Sign up" class="btn btn-sm btn-success" data-disable-with="Sign up">
-        </div>
-</form>        <a href="/users/sign_in">Log in</a><br>
-
-
-<p id="notice"></p>
 <div class="container"><!--外枠-->
   <div class="row"><!--外枠-->
     <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0"><!--外枠-->
       <h2>Sign up</h2><!--外枠-->
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
-
+<form>
   <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+    <div class="row">
+    <div class="col"><label for="user_name" class="form-label">Name</label></div>
+    <div class="w-100"></div>
+    <div class="col"><input autofocus="autofocus" class="name" type="text" name="user[name]" id="user_name"></div>
+    </div>
   </div>
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <div class="row">
+    <div class="col"><label for="user_email" class="form-label">Email</label></div>
+    <div class="w-100"></div>
+    <div class="col"><input autofocus="autofocus" class="email" type="email" value="" name="user[email]" id="user_email"></div>
+    </div>
   </div>
+
 
   <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <div class="row">
+    <div class="col"><label for="user_password" class="password">Password</label>
+    <em>(6 characters minimum)</em></div>
+    <div class="w-100"></div>
+    <div class="col"><input autocomplete="off" class="password" type="password" name="user[password]" id="user_password"></div>
+    </div>
   </div>
+
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <div class="row">
+    <div class="col"><label for="user_password_confirmation" class="password_confirm">Password confirmation</label></div>
+    <div class="w-100"></div>
+    <div class="col"><input autocomplete="off" class="password_confirm" type="password" name="user[password_confirmation]" id="user_password_confirmation"></div>
+    </div>
   </div>
-
-  <div class="actions"><!--サインアップボタン完成-->
+ <div class="actions"><!--サインアップボタン完成-->
     <%= f.submit "Sign up", class:"btn btn-sm btn-success" %><!--サインアップボタン完成-->
   </div><!--サインアップボタン完成-->
-<% end %>
-
+    <% end %>
+</form>
 <%= render "devise/shared/links" %><!--外枠-->
     </div><!--外枠-->
   </div><!--外枠-->
 </div><!--外枠-->
+

@@ -4,16 +4,13 @@
 <h2>Book detail</h2>
 <table class="table">
   <tbody>
-
     <tr>
       <td>
-        <div class="row"><!--画像と名前をBootstarpで一つのcolにまとめる-->
-          <div class="col"><%= image_tag @user.get_profile_image(100,100) %></div>
-          <div class="w-100"></div>
-          <div class="col">
-            <span><%= link_to @user.name, user_path(@user.id)%></span>
-          </div>
-        </div>
+      <%= link_to user_path(@user.id) do%>
+      <%= image_tag @user.get_profile_image(100,100) %>
+        <br>
+      <%= @user.name %>
+      <% end %>
       </td>
       <td>
         <span><%= link_to @book.title, book_path(@book.id) %></span>
@@ -26,16 +23,14 @@
         <%= link_to "Edit", edit_book_path(@book.id), class:"btn btn-sm btn-success" %>
         </div>
       </td>
-
-
       <% if @book.user == current_user %>
       <td><%= link_to "Destroy", book_path(@book.id), method: :delete, "data-confirm" => "本当に消しますか？", class:"btn btn-sm btn-danger" %></td>
       <% end %>
     </tr>
-
   </tbody>
 </table>
 </div>
 </div>
 </div>
+
 

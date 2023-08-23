@@ -59,8 +59,8 @@ class BooksController < ApplicationController
   private
 
  def is_matching_login_user
-    user = Book.find(params[:id])
-  unless user.id == current_user.id
+   book =Book.find(params[:id])
+unless book.user.id == current_user.id
     redirect_to books_path
   end
  end

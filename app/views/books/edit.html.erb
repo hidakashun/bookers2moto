@@ -1,5 +1,6 @@
-<h1>自分のBOOKの新規登録画面</h1>
-
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
 <h1>Editing Book</h1>
 
 <% if @book.errors.any? %>
@@ -13,14 +14,14 @@
 
 <%= form_with model: @book do |f| %>
 
-<h4>Title</h4>
-<%= f.text_field :title %>
+<p>Title</p>
+<%= f.text_field :title, class:"form-control book_title" %>
 
-<h4>Body</h4>
-<%= f.text_area :body %>
+<p>Opinion</p>
+<%= f.text_area :body, class:"form-control book_body" %>
 
 <div>
-  <%= f.submit 'Update Book' %>
+  <%= f.submit 'Update Book', class:"btn btn-success" %>
 </div>
 
 <div>
@@ -29,3 +30,6 @@
   <a class="back" href="/books">Back</a>
 </div>
 <% end %>
+</div>
+</div>
+</div>

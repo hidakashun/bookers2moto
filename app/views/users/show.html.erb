@@ -17,7 +17,9 @@
 
       <tr><!--済-->
         <td><!--済-->
-          <%= image_tag book.user.get_profile_image(100,100) %><!--済-->
+          <%= link_to user_path(book.user.id) do%><!--済-->
+          <%= image_tag book.user.get_profile_image(100, 100) %><!--済-->
+          <% end %><!--済-->
         </td><!--済-->
         <td><!--済-->
           <span><%= link_to book.title, book_path(book.id) %></span><!--済-->

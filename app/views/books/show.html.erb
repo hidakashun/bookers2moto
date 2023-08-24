@@ -7,9 +7,9 @@
     <tr>
       <td>
       <%= link_to user_path(@user.id) do%>
-      <%= image_tag @user.get_profile_image(100,100) %>
+      <%= image_tag @user.get_profile_image(100,100) %><!--このbookを投稿したuserの画像にする？-->
         <br>
-      <%= @user.name %>
+      <%= @user.name %><!--このbookを投稿したuserの名前にする？-->
       <% end %>
       </td>
       <td>

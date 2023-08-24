@@ -1,8 +1,8 @@
 class BooksController < ApplicationController
   before_action :is_matching_login_user, only: [:edit, :update]
-  def new
-    @book = Book.new
-  end
+  def new#いらない？
+    @book = Book.neww#いらない？
+  end#いらない？
 
   def create
 
@@ -25,21 +25,15 @@ class BooksController < ApplicationController
   end
 
   def show
-
     @book = Book.find(params[:id])
-    @user = current_user
-
+    @user = User.find_by(id: @book.user_id)#投稿でユーザー情報の表示をする
   end
 
   def edit
-
     @book = Book.find(params[:id])
   end
 
   def update
-
-
-
     @book = Book.find(params[:id])
     if @book.update(book_params)
     flash[:notice] = "You have updated book successfully."

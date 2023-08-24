@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :is_matching_login_user, only: [:edit, :update]#他人のユーザ情報編集画面に遷移できないようにしてる（カリキュラムほかのユーザーからのアクセスを制限しよう）
+  before_action :is_matching_login_user, only: [:edit, :update,]#他人のユーザ情報編集画面に遷移できないようにしてる（カリキュラムほかのユーザーからのアクセスを制限しよう）
   def index
     @users = User.all
     @user = current_user
@@ -37,7 +37,7 @@ class UsersController < ApplicationController
   def is_matching_login_user#他人のユーザ情報編集画面に遷移できないようにしてる（カリキュラムほかのユーザーからのアクセスを制限しよう）
     user = User.find(params[:id])
     unless user.id == current_user.id
-      redirect_to books_path
+      redirect_to current_user#ここではじいたときに行先を決める(現在ログインしているユーザーのデータ)
     end
   end
 
